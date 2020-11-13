@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" />
+    <title>checkpoint DOM</title>
+    <link rel="stylesheet" href="css/DOM.css" />
+    <script src="js/DOM.js"></script>
+  </head>
+  <body>
+    <h1>Create a shopping cart !</h1>
+    <div class="container">
+      <div class="buttons">
+        <button
+          onclick="submitButtonStyle()"
+          type="submit"
+          class="delete-button"
+        >
+          x
+        </button>
+        <button onclick="submitButtonStyle()" type="submit" class="stylebutton">
+          <img
+            src="pic/heart-icon.png"
+            alt="add-wish"
+            width="20px"
+            height="20px
+          "
+          />
+        </button>
+      </div>
+      <div class="image">
+        <img
+          src="pic/BMB5865.jpg"
+          alt="item
+        "
+        />
+      </div>
+      <div class="description">
+        <h1>Rabat Case blue</h1>
+        <p>
+          The Deluxe Rabat Case <em>Point Sellier</em> protects your Macbook in
+          style. Its full-grain leather gives it an unparalleled longevity.
+          Lined with high-end suede. The carrying handle and the intelligent
+          closure ensure safe storage and easy everyday use respectively.
+        </p>
+      </div>
+      <div class="counter">
+        <button class="moins">-</button>
+        <p class="quantity">1</p>
+        <button class="plus">+</button>
+      </div>
+      <div class="price">180 dt</div>
+    </div>
+    <script>
+      document.querySelector(".moins").addEventListener("click", () => {
+        document.querySelector(".quantity").innerHTML--;
+      });
+      document.querySelector(".plus").addEventListener("click", () => {
+        document.querySelector(".quantity").innerHTML++;
+      });
+      document.querySelectorAll(".stylebutton").forEach(function (e) {
+        e.addEventListener("click", function () {
+          this.style.backgroundColor = "red";
+        });
+      });
+    </script>
+  </body>
+</html>
